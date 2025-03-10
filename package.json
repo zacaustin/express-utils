@@ -1,0 +1,38 @@
+{
+  "name": "express-utils",
+  "version": "0.0.1",
+  "description": "Common ExpressJS Utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zacaustin/express-utils.git"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "controllers"
+  ],
+  "author": "Zac Austin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zacaustin/express-utils/issues"
+  },
+  "homepage": "https://github.com/zacaustin/express-utils#readme",
+  "dependencies": {
+    "debug": "^4.4.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@src": "./src",
+    "@middleware": "./src/middleware",
+    "@controllers": "./src/controllers",
+    "@tests": "./tests"
+  }
+}
