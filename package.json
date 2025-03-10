@@ -1,5 +1,5 @@
 {
-  "name": "express-utils",
+  "name": "@zacaustin/express-utils",
   "version": "0.0.1",
   "description": "Common ExpressJS Utilities",
   "main": "index.js",
@@ -10,6 +10,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zacaustin/express-utils.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "express",
