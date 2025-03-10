@@ -23,6 +23,7 @@
   "homepage": "https://github.com/zacaustin/express-utils#readme",
   "dependencies": {
     "debug": "^4.4.0",
+    "http-errors": "^2.0.0",
     "module-alias": "^2.2.3",
     "uuid": "^11.1.0"
   },
