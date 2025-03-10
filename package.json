@@ -24,17 +24,9 @@
   "dependencies": {
     "debug": "^4.4.0",
     "http-errors": "^2.0.0",
-    "module-alias": "^2.2.3",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
-  },
-  "_moduleAliases": {
-    "@root": ".",
-    "@src": "./src",
-    "@middleware": "./src/middleware",
-    "@controllers": "./src/controllers",
-    "@tests": "./tests"
   }
 }
