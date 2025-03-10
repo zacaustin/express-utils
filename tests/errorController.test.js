@@ -1,4 +1,4 @@
-const errorController = require('../src/controllers/errorController');
+const { errorController } = require('..');
 const debug = require('debug')('exputil:errorController');
 
 jest.mock('debug', () => jest.fn().mockReturnValue(jest.fn()));

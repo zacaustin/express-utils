@@ -1,5 +1,4 @@
-const responseStructure = require('../src/middleware/responseStructure');
-
+const { responseStructureMiddleware } = require('..');
 
 jest.mock('uuid', () => ({
     v4: jest.fn(() => 'mocked-uuid'),
@@ -18,7 +17,7 @@ describe('responseStructure Middleware', () => {
     });
 
     it('should assign a requestId and initialize errors array', () => {
-        responseStructure(req, res, next);
+        responseStructureMiddleware(req, res, next);
 
         expect(req.requestId).toBe('mocked-uuid');
         expect(req.errors).toEqual([]);
@@ -26,7 +25,7 @@ describe('responseStructure Middleware', () => {
     });
 
     it('should attach a respond function to response', async () => {
-        responseStructure(req, res, next);
+        responseStructureMiddleware(req, res, next);
 
         expect(typeof res.respond).toBe('function');
 
@@ -44,7 +43,7 @@ describe('responseStructure Middleware', () => {
     });
 
     it('should handle error responses correctly', async () => {
-        responseStructure(req, res, next);
+        responseStructureMiddleware(req, res, next);
 
         req.errors.push('Some error');
 
@@ -62,7 +61,7 @@ describe('responseStructure Middleware', () => {
     });
 
     it('should default to successFlag based on statusCode', async () => {
-        responseStructure(req, res, next);
+        responseStructureMiddleware(req, res, next);
 
         await res.respond(201, { data: 'Created' });
         expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ success: true }));
@@ -72,7 +71,7 @@ describe('responseStructure Middleware', () => {
     });
 
     it('should respect explicit successFlag in options', async () => {
-        responseStructure(req, res, next);
+        responseStructureMiddleware(req, res, next);
 
         await res.respond(500, { data: 'Internal Error' }, { successFlag: true });
         expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ success: true }));
